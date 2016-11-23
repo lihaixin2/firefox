@@ -6,11 +6,11 @@
 
 ###运行容器
 
-	docker run -d -p 5900:5900 -p 8787:8787 --name chromium lihaixin/chromium
+	docker run -d -p 5900:5900 -p 8787:8787 --name firefox lihaixin/firefox
 
 ###修改VNC密码
 
-	docker exec -it chromium /bin/sh -c "x11vnc -storepasswd VNCPASSWORD ~/.vnc/passwd"
+	docker exec -it firefox /bin/sh -c "x11vnc -storepasswd VNCPASSWORD ~/.vnc/passwd"
 
 
 ###如何访问
