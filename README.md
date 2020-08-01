@@ -6,7 +6,7 @@
 
 ###运行容器
 
-	docker run -d -p 5900:5900 -p 8787:8787 --name firefox lihaixin/firefox
+	docker run -d -p 5900:5900 -p 8787:8787 --name firefox lihaixin/firefox:s5
 
 ###修改VNC密码
 
