@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-
+ENV PROXY_URL="socks5://User-001:qq159@50.117.22.53:13092"
 ENV XYZ 1024x768x16
 ENV TZ "Asia/Shanghai"
 ENV VNC_PW "vncpassword"
@@ -15,7 +15,7 @@ ENV DISPLAY :0
 #升级仓库，安装基本网络包
 RUN apt-get update -y && \
         apt-get install -qqy --no-install-recommends \
-        gettext-base wget curl  iputils-ping iproute2 mtr apt-utils \
+        gettext-base wget curl  iputils-ping iproute2 mtr apt-utils tsocks \
         vim net-tools supervisor
 
 # 安装基本字体
@@ -42,7 +42,11 @@ RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
 #安装firefox
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends firefox
+	apt-get install -y --no-install-recommends firefox && \
+	wget "https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz" && \
+        gzip -d gost-linux-amd64-2.11.0.gz && \
+        mv gost-linux-amd64-2.11.0 /usr/bin/gost && \
+        chmod +x /usr/bin/gost
 #	apt-get install -y --no-install-recommends adobe-flashplugin firefox
 
 
