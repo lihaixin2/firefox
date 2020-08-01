@@ -42,7 +42,8 @@ RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
 #安装firefox
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends firefox
+	apt-get install -y --no-install-recommends firefox && \
+        locale-gen en_US.UTF-8
 #	apt-get install -y --no-install-recommends adobe-flashplugin firefox
 
 
