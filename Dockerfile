@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Haixin Lee <docker@lihaixin.name>
 ENV DEBIAN_FRONTEND noninteractive
-RUN locale-gen en_US.UTF-8
+# RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
@@ -42,7 +42,8 @@ RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
 #安装firefox
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends adobe-flashplugin firefox
+	apt-get install -y --no-install-recommends firefox
+#	apt-get install -y --no-install-recommends adobe-flashplugin firefox
 
 
 # 升级到最新版本 删除不必要的软件和Apt缓存包列表
