@@ -46,7 +46,8 @@ RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/s
 	wget "https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz" && \
         gzip -d gost-linux-amd64-2.11.0.gz && \
         mv gost-linux-amd64-2.11.0 /usr/bin/gost && \
-        chmod +x /usr/bin/gost
+        chmod +x /usr/bin/gost && \
+	sed -i 's/192.168.0.1/127.0.0.1/' /etc/tsocks.conf
 #	apt-get install -y --no-install-recommends adobe-flashplugin firefox
 
 
