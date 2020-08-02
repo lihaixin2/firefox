@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Haixin Lee <docker@lihaixin.name>
 ENV DEBIAN_FRONTEND noninteractive
 # RUN locale-gen en_US.UTF-8
