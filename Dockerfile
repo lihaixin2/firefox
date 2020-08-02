@@ -35,8 +35,8 @@ RUN apt-get -y install xvfb x11vnc fluxbox xdotool  git git-core ca-certificates
          RUN x11vnc -storepasswd $VNC_PW ~/.vnc/passwd
 
 # 克隆 noVNC和设置novnc首页
-RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
-        git clone --recursive https://github.com/kanaka/websockify.git /opt/novnc/utils/websockify && \
+RUN git clone --recursive https://github.com/novnc/noVNC.git /opt/novnc && \
+        git clone --recursive https://github.com/novnc/websockify.git /opt/novnc/utils/websockify && \
         ln -s /opt/novnc/vnc.html /opt/novnc/index.html
 
 #安装firefox
